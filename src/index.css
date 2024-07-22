@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-gradient-to-br h-screen from-red-600 to-pink-700 bg-no-repeat bg-cover
+    }
+}
