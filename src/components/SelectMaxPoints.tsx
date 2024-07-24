@@ -6,92 +6,63 @@ export default function SelectMaxPoints() {
   if (!pigGameContext) return;
   const { limitPoints, switchLimitPoints } = pigGameContext;
 
-  function onSwitchLimitPointsHandler(point: 20 | 30 | 40 | 50 | 100) {
-    console.log(point);    
-  }
-
   return (
-    <div className="flex items-center rounded-full w-full justify-between overflow-hidden border border-slate-400 last:border-r-0">
+    <div className="flex items-center justify-between w-full overflow-hidden border rounded-full border-slate-400 last:border-r-0">
       <button
         className={`text-center w-[20%] border-r border-r-slate-400 ${
-            limitPoints === 20
+          limitPoints === 20
             ? "bg-rose-500 text-slate-100"
             : "bg-transparent text-slate-400"
         }`}
-        onClick={() => onSwitchLimitPointsHandler(20)}
+        onClick={() => switchLimitPoints(20)}
+        type="button"
       >
         20
       </button>
       <button
         className={`text-center w-[20%] border-r border-r-slate-400 ${
-            limitPoints === 30
+          limitPoints === 30
             ? "bg-rose-500 text-slate-100"
             : "bg-transparent text-slate-400"
         }`}
-        onClick={() => onSwitchLimitPointsHandler(30)}
+        onClick={() => switchLimitPoints(30)}
+        type="button"
       >
         30
       </button>
       <button
         className={`text-center w-[20%] border-r border-r-slate-400 ${
-            limitPoints === 40
+          limitPoints === 40
             ? "bg-rose-500 text-slate-100"
             : "bg-transparent text-slate-400"
         }`}
-        onClick={() => onSwitchLimitPointsHandler(40)}
+        onClick={() => switchLimitPoints(40)}
+        type="button"
       >
         40
       </button>
       <button
         className={`text-center w-[20%] border-r border-r-slate-400 ${
-            limitPoints === 50
+          limitPoints === 50
             ? "bg-rose-500 text-slate-100"
             : "bg-transparent text-slate-400"
         }`}
-        onClick={() => onSwitchLimitPointsHandler(50)}
+        onClick={() => switchLimitPoints(50)}
+        type="button"
       >
         50
       </button>
       <button
-        className={`text-center w-[20%] border-r border-r-slate-400 ${
-            limitPoints === 100
+        className={`text-center w-[20%] ${
+          limitPoints === 100
             ? "bg-rose-500 text-slate-100"
             : "bg-transparent text-slate-400"
         }`}
-        onClick={() => onSwitchLimitPointsHandler(100)}
+        onClick={() => switchLimitPoints(100)}
+        type="button"
       >
         100
       </button>
     </div>
   );
 }
-
-// type PointsProps = {
-//   point: number;
-// };
-
-// function Points({ point }: PointsProps) {
-//   const mainManuContext = useContext(mainMenuContext);
-//   if (!mainManuContext) return;
-//   const { maxPoint, switchMaxPoint } = mainManuContext;
-
-//   let isSelected = `${
-//     maxPoint === point
-//       ? "bg-rose-500 text-slate-100"
-//       : "bg-transparent text-slate-400"
-//   }`;
-
-//   function onSwitchMaxPointHandler() {
-//     switchMaxPoint(point);
-//   }
-
-//   return (
-//     <button
-//       key={point}
-//       onClick={onSwitchMaxPointHandler}
-//       className={`text-center w-full border-r border-r-slate-400 ${isSelected}`}
-//     >
-//       {point}
-//     </button>
-//   );
-// }
