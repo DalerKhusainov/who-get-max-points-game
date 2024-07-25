@@ -2,14 +2,16 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import PlayerCard from "../components/PlayerCard";
 import Button from "../components/Button";
-import { Dices, Download, House, RefreshCw } from "lucide-react";
+import { Dices, Download, House, RefreshCw, CircleHelp } from "lucide-react";
 import Dice from "../components/Dice";
 import { randomNum } from "../utils/randomNum";
 import { PigGameContext } from "../contexts/pigGamaContext";
+import Modal from "../components/Modal";
 
 export default function GameWindowPage() {
   const [randomNumber, setRandomNumber] = useState<number>(1);
   const [currentPoints, setCurrentPoints] = useState<number>(0);
+  const [toggleModal, setToggleModal] = useState(false);
 
   const pigGameContext = useContext(PigGameContext);
   if (!pigGameContext) return;
@@ -49,16 +51,32 @@ export default function GameWindowPage() {
   }
 
   return (
-    <div className="flex flex-col items-center mt-10">
+    <div className="flex flex-col items-center justify-center">
       <div className="flex items-center min-w-[600px] mb-4 justify-start">
-        <Link to="/" type="button" className="">
-          <House className="text-slate-100" />
-        </Link>
+        {toggleModal && <Modal toggleModal={setToggleModal} />}
+        <div className="flex items-center transition-colors ease-in-out gap-x-4">
+          <Link
+            to="/"
+            type="button"
+            className="hover:text-slate-200 text-slate-100"
+          >
+            <House />
+          </Link>
+          <button
+            type="button"
+            className="text-slate-100 hover:text-slate-200"
+            onClick={() =>
+              setToggleModal((prev) => (prev === true ? false : true))
+            }
+          >
+            <CircleHelp />
+          </button>
+        </div>
         <div className="ml-auto mr-[33.333%] text-2xl uppercase text-slate-100">
           Winner point: <span>{limitPoints}</span>
         </div>
       </div>
-      <div className="relative flex overflow-hidden rounded-md">
+      <div className="relative flex items-center justify-center w-full overflow-hidden rounded-md">
         <PlayerCard
           player={player1}
           count={activePlayer === "player1" ? currentPoints : 0}

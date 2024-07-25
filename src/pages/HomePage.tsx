@@ -60,7 +60,8 @@ export default function HomePage() {
       <div>
         <button
           type="button"
-          className="w-full py-4 mt-4 text-sm font-semibold uppercase rounded-lg bg-rose-600 text-slate-100"
+          disabled={loading}
+          className="w-full py-4 mt-4 text-sm font-semibold uppercase rounded-lg bg-rose-500 hover:bg-rose-600 disabled:bg-rose-800 text-slate-100"
           onClick={onCreatePlayersHandler}
         >
           {loading ? "Loading..." : "Start game"}

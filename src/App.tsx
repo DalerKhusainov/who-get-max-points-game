@@ -4,13 +4,11 @@ import GameWindowPage from "./pages/GameWindowPage";
 
 function App() {
   return (
-    <div>
-      <div>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/game" element={<GameWindowPage />} />
-        </Routes>
-      </div>
+    <div className="px-4 mx-auto mt-10">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/game" element={<GameWindowPage />} />
+      </Routes>
     </div>
   );
 }

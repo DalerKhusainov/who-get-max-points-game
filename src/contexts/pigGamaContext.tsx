@@ -28,17 +28,6 @@ export function PigGameProvider({ children }: { children: ReactNode }) {
   const [player1, setPlayer1] = useState<string>("Player 1");
   const [player2, setPlayer2] = useState<string>("Player 2");
 
-  // if (playerOnePoints >= limitPoints) {
-  //   setWinner(player1);
-  //   // setShowModal(true);
-  //   console.log(winner);
-  // } else if (playerTwoPoints >= limitPoints) {
-  //   setWinner(player2);
-  //   console.log(winner);
-
-  //   // setShowModal(true);
-  // }
-
   function createPlayers(
     player1: string = "Player 1",
     player2: string = "Player 2"

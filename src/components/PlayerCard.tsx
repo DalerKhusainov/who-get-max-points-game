@@ -23,7 +23,9 @@ export default function PlayerCard({
     >
       <h1
         className={`mb-4 ${
-          isActive === "Yes" ? "border-b-[4px] border-b-slate-600" : ""
+          isActive === "Yes"
+            ? "border-b-[4px] border-b-slate-600"
+            : "border-b-[4px] border-b-transparent"
         } text-slate-600 pb-1 tracking-wider text-2xl font-medium uppercase`}
       >
         {player}
