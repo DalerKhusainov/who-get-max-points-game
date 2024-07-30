@@ -73,7 +73,7 @@ export default function GameWindowPage() {
           </button>
         </div>
         <div className="ml-auto mr-[33.333%] text-2xl uppercase text-slate-100">
-          Winner point: <span>{limitPoints}</span>
+          Winning score: <span>{limitPoints}</span>
         </div>
       </div>
       <div className="relative flex items-center justify-center w-full overflow-hidden rounded-md">
