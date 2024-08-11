@@ -16,12 +16,12 @@ export default function GameWindowPage() {
   const pigGameContext = useContext(PigGameContext);
   if (!pigGameContext) return;
   const {
-    playerOnePoints,
-    playerTwoPoints,
     addCurrentPoints,
     switchPlayer,
-    activePlayer,
     setNewGame,
+    playerOnePoints,
+    playerTwoPoints,
+    activePlayer,
     player1,
     player2,
     limitPoints,
